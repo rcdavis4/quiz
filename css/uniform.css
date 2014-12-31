@@ -1,5 +1,16 @@
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
 
+/*******   Box-Sizing & Font Smoothing   *******/
+*, 
+*:before,
+*:after {
+  -webkit-font-smoothing: antialiased;
+  
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 
 /**
  * 1. Set default font family to sans-serif.
@@ -11,10 +22,6 @@ html {
   font-family: sans-serif; /* 1 */
   -ms-text-size-adjust: 100%; /* 2 */
   -webkit-text-size-adjust: 100%; /* 2 */
-  
-/*******   Box-Sizing & Font Smoothing   *******/
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
 }
 
 /**
