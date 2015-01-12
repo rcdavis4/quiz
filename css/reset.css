@@ -36,11 +36,6 @@ a {
   text-decoration: none;
 }
 
-/* Disable Drag-&-Save images */
-img {
-  pointer-events: none;
-}
-
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
