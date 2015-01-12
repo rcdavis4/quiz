@@ -1,8 +1,8 @@
 /*
  Width: 1000px
- # Columns : 12 
+ # Columns : 12
  Column width: 65px
- Gutter : 20px 
+ Gutter : 20px
 
  */
 .grid_1 { width: 65px; }
@@ -39,7 +39,7 @@
 .omega{margin-right:0px;}
 
 .container{
-	width: 1000px; 
+	width: 1000px;
 	margin: auto;
 }
 

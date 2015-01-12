@@ -1,11 +1,10 @@
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
 
 /*******   Box-Sizing & Font Smoothing   *******/
-*, 
+*,
 *:before,
 *:after {
   -webkit-font-smoothing: antialiased;
-  
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -458,7 +457,7 @@ ul {
 .container,
 .grid {
   margin: 0 auto;
-  width: 960px;
+  max-width: 960px;
 }
 .container {
   padding-left: 30px;
