@@ -46,10 +46,5 @@ only screen and (max-device-width : 799px) {
 
 @media only screen and (max-width : 599px),
 only screen and (max-device-width : 599px) {
-
-}
-
-@media only screen and (max-width : 420px),
-only screen and (max-device-width : 420px) {
-
+/* container width: 320px */
 }
