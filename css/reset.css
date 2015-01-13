@@ -1,15 +1,3 @@
-/*******   Box-Sizing & Font Smoothing   *******/
-
-*,
-*:before,
-*:after {
-  -webkit-font-smoothing: antialiased;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-
 /*******   Reset.css   *******/
 
 html, body, div, span, applet, object, iframe,
@@ -54,4 +42,16 @@ blockquote:before, blockquote:after,
 q:before, q:after {
 	content: '';
 	content: none;
+}
+
+
+/*******   Box-Sizing & Font Smoothing   *******/
+
+*,
+*:before,
+*:after {
+  -webkit-font-smoothing: antialiased;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
