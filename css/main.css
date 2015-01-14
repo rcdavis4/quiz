@@ -29,22 +29,26 @@ body {
   ========================================
 */
 
-@media only screen and (max-width : 1200px),
-only screen and (max-device-width : 1200px) {
-
+@media only screen and (min-width: 480px) {
+  /* 480 =================================================== */
 }
-
-@media only screen and (max-width : 999px),
-only screen and (max-device-width : 999px) {
-
+@media only screen and (min-width: 600px) {
+  /* 600 =================================================== */
 }
-
-@media only screen and (max-width : 799px),
-only screen and (max-device-width : 799px) {
-
+@media only screen and (min-width: 768px) {
+  /* 768 =================================================== */
 }
-
-@media only screen and (max-width : 599px),
-only screen and (max-device-width : 599px) {
-/* container width: 320px */
+@media only screen and (min-width: 992px) {
+  /* 992 =================================================== */
+}
+@media only screen and (min-width: 1382px) {
+  /* 1382 =================================================== */
+  body {
+    max-width: 1440px;
+  }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (min--moz-device-pixel-ratio: 1.5),
+only screen and (min-device-pixel-ratio: 1.5) {
+  /* 2x =================================================== */
 }
