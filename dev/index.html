@@ -11,12 +11,43 @@
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/grid.css">
   <link rel="stylesheet" href="css/main.css">
+  <link href='http://fonts.googleapis.com/css?family=Asap:400,700' rel='stylesheet' type='text/css'>
   <script src="js/modernizr.js"></script>
 </head>
 
 <body>
 
+  <!-- CONTAINER -->
+  <section class="qa-container">
+    <div class="content">
 
+      <!-- QUESTION/ANSWERS FORM -->
+      <form method="post" class="qa-form">
+
+        <!-- FIELDSETS USE JS TO CHANGE DYNAMICALLY -->
+        <fieldset id="qa-set" class="qa-set">
+
+          <legend id="question" class="question">Question #1</legend>
+
+          <input type="radio" name="choices" class="choices" value="answer"><label for="radio">choices</label><br>
+          <input type="radio" name="choices" class="choices" value="answer"><label for="radio">choices</label><br>
+          <input type="radio" name="choices" class="choices" value="answer"><label for="radio">choices</label><br>
+          <input type="radio" name="choices" class="choices" value="answer"><label for="radio">choices</label><br>
+          <input type="radio" name="choices" class="choices" value="answer"><label for="radio">choices</label><br>
+          <input type="submit" id="submit" value="Submit">
+
+        </fieldset>
+
+      </form>
+
+      <section id="correct-ans" class="correct-ans">
+        <p>hkjhlkjh</p>
+      </section>
+
+    </div>
+    <!-- END CONTENT DIV -->
+
+  </section>
 
 
   <!-- LOAD JQUERY -->

@@ -13,12 +13,12 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 a {
   text-decoration: none;
@@ -27,21 +27,21 @@ a {
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
-	display: block;
+  display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
 }
 ol, ul {
-	list-style: none;
+  list-style: none;
 }
 blockquote, q {
-	quotes: none;
+  quotes: none;
 }
 blockquote:before, blockquote:after,
 q:before, q:after {
-	content: '';
-	content: none;
+  content: '';
+  content: none;
 }
 
 
@@ -51,8 +51,6 @@ q:before, q:after {
 *:before,
 *:after {
   -webkit-font-smoothing: antialiased;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -62,6 +60,7 @@ q:before, q:after {
 body {
   text-rendering: optimizeLegibility; /* optional: for older browsers */
   -webkit-font-variant-ligatures: common-ligatures; /* for iOS and Safari 6 */
+  -moz-font-variant-ligatures: common-ligatures;
   font-variant-ligatures: common-ligatures; /* for up-to-date browsers, including IE10 and Opera 21 */
 
   /***  Kerning  ***/
@@ -70,6 +69,8 @@ body {
   -webkit-font-feature-settings: "kern";
   -moz-font-feature-settings: "kern"; /* Firefox 14+ */
   font-feature-settings: "kern"; /* standard */
+  -webkit-font-kerning: normal;
+  -moz-font-kerning: normal;
   font-kerning: normal; /* Safari 7+, Firefox 24+, Chrome 33(?)+, Opera 21+*/
 }
 
