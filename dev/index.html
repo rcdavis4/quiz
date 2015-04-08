@@ -21,13 +21,15 @@
   <section class="qa-container">
     <div class="content">
 
+      <h2 class="title js-title">These are the quotes from my favorite 80's movies...</h2>
+
       <!-- QUESTION/ANSWERS FORM -->
       <form method="post" class="qa-form js-qa-form">
 
         <!-- FIELDSETS USE JS TO CHANGE DYNAMICALLY -->
-        <fieldset class="qa-set js-qa-set">
+        <fieldset class="js-qa-set">
 
-          <legend class="question js-question">The quote: "That chick Julie, she's truly dazzling...Yep, but she's not one of ours." is from which movie?</legend>
+          <legend class="question js-question">1) "That chick Julie, she's truly dazzling...Yep, but she's not one of ours."</legend>
 
           <input type="radio" name="choices" class="choices js-choices" value="answer"><label for="radio">choices</label><br>
           <input type="radio" name="choices" class="choices js-choices" value="answer"><label for="radio">choices</label><br>
@@ -58,6 +60,10 @@
       <section class="end-message js-end-message">
         <p>You answered 0 out of 5 questions correctly.</p>
       </section>
+
+      <div class="play-again js-play-again">
+        <input type="button" class="lg-btn js-lg-btn" name="submit" value="Again?">
+      </div>
 
     </div>
     <!-- END CONTENT DIV -->

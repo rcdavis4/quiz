@@ -19,7 +19,7 @@ body {
 .content {
   width: 80%;
   margin: 0 auto;
-  padding: 0 0.938rem; /* equiv. to 15px */
+  padding: 0 0.938rem;
 }
 
 
@@ -43,11 +43,20 @@ body {
   -ms-flex-align: center;
   margin: 5% auto 10%;
 
-  display: none;
+/*  display: none;*/
 }
 
 .qa-form {
   text-align: center;
+}
+
+.title {
+  margin-bottom: 5rem;
+  text-align: center;
+  font-family: 'Asap',sans-serif;
+  font-weight: 700;
+  font-size: 3em;
+  color: rgba(0, 0, 0, 0.84);
 }
 
 .question {
@@ -72,7 +81,7 @@ input {
 }
 
 label {
-  font-family: sans-serif;
+  font-family: 'Asap',sans-serif;
   font-weight: 700;
   font-size: 1.2em;
   color: rgba(0, 0, 0, 0.64);
@@ -138,6 +147,8 @@ input[type=submit] {
   -webkit-align-items: center;
   -ms-flex-align: center;
   margin: 15% auto;
+
+  display: none;
 }
 
 .game-over {
@@ -161,6 +172,33 @@ input[type=submit] {
   padding: 20px 30px;
 }
 
+.play-again {
+  display: flex;
+  justify-content: center;
+
+}
+
+.lg-btn {
+  margin: 5rem auto;
+  border: 4px solid rgba(0, 0, 0, 0.84);
+  background-color: transparent;
+  border-radius: 2px;
+  padding: 10px 40px;
+  color: rgba(0, 0, 0, 0.84);
+  font-family: 'Asap', sans-serif;
+  font-weight: 700;
+  font-size: 1.4em;
+  cursor: pointer;
+}
+
+.lg-btn:hover {
+  background-color: rgba(0, 0, 0, 0.84);
+  color: #fff;
+}
+
+.lg-btn:focus {
+  outline: 0;
+}
 
 /*
   ========================================
