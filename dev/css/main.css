@@ -29,7 +29,7 @@ body {
   ========================================
 */
 
-.qa-container{
+.qa-container {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -41,21 +41,18 @@ body {
   -webkit-box-align: center;
   -webkit-align-items: center;
   -ms-flex-align: center;
-  align-items: center;
+  margin: 5% auto 10%;
+
+  display: none;
 }
 
 .qa-form {
-
-}
-
-.qa-set {
   text-align: center;
 }
 
 .question {
-  padding: 0.3em;
   margin-bottom: 3.125rem;
-  font-size: 4em;
+  font-size: 1.8em;
   font-weight: 700;
   text-align: center;
   color: rgba(0, 0, 0, 0.84);
@@ -111,7 +108,6 @@ input[type=submit] {
   border: 4px solid rgba(0, 0, 0, 0.54);
   border-radius: 2px;
   padding: 20px;
-  margin-bottom: 100px;
 }
 
 .astericks {
@@ -120,6 +116,49 @@ input[type=submit] {
   font-size: 1.6em;
   font-weight: 700;
   color: rgba(0, 0, 0, 0.64);
+}
+
+
+/*
+  ========================================
+  END OF QUESTIONS
+  ========================================
+*/
+
+.game-over-container {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  margin: 15% auto;
+}
+
+.game-over {
+  margin: 3.125rem auto;
+  font-size: 4em;
+  font-weight: 700;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.84);
+}
+
+.end-message {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  color: #fff;
+  font-size: 1.6em;
+  font-weight: 700;
+  text-align: center;
+  background-color: #D32F2F;
+  border-radius: 2px;
+  padding: 20px 30px;
 }
 
 
