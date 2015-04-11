@@ -12,7 +12,7 @@ $(document).ready(function() {
   var Quiz = [
     {
       question: "'That chick Julie, she's truly dazzling...Yep, but she's not one of ours.'",
-      choices: ["Valley Girl", "2", "3", "4", "5"],
+      choices: ["Valley Girl", "Weird Science", "Back To School", "Beetlejuice", "Big Trouble In Little China"],
       answer: "Valley Girl",
       correct: false
     },
@@ -51,34 +51,40 @@ $(document).ready(function() {
   // load questions
   function addQuestion() {
     $('.js-question').html(Quiz[questionIndex].question);
-
-    questionIndex++;
   }
 
-  function addChoices() {
-//    var choiceIndex = 0;
+//  function addChoices() {
 
-    $('.js-choices').append("<label for='radio'>gggg</label>");
+    var choices = Quiz[questionIndex].choices;
+    var labels = $('label').each('label');
+    console.log(labels);
 
-  }
 
-// for (indices in question && indices in choices)
+//    for (var index = 0; index < labels.length; index++) {
+//      var labelContent = [labels];
+//    }
+//
+//    for (content in choices) {
+//      label.each().elements.html(choices[content]);
+//    }
+//  }
+
 // <label for="radio">choices</label>
-// $('input:selected').siblings('label')
 
   /*--- FUNCTION CALLS ---*/
   addQuestion();
-  addChoices();
+//  addChoices();
+
+//  var label = $('label');
 
 
-console.log(Quiz[0].question);
-console.log(Quiz[0].choices[0]);
 
   /*--- EVENTS ---*/
 //  $('.js-question').click(function() {
     // load new question
     // load new choices
     // compare answer with selected choice
+    // $('input:selected').siblings('label')
     // display message
 //  });
 
