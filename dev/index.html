@@ -17,7 +17,7 @@
 
 <body>
 
-  <!-- CONTAINER -->
+  <!-- Q&A CONTAINER -->
   <section class="qa-container">
     <div class="content">
 
@@ -25,30 +25,24 @@
 
       <!-- QUESTION/ANSWERS FORM -->
       <form method="post" class="qa-form js-qa-form">
+        <legend class="question js-question"></legend>
 
-        <!-- FIELDSETS USE JS TO CHANGE DYNAMICALLY -->
-        <fieldset class="js-qa-set">
+        <!-- RADIO BUTTONS -->
+        <input type="radio" name="choice0" class="choices js-choices" value=""><label for="radio"></label><br>
+        <input type="radio" name="choice1" class="choices js-choices" value=""><label for="radio"></label><br>
+        <input type="radio" name="choice2" class="choices js-choices" value=""><label for="radio"></label><br>
+        <input type="radio" name="choice3" class="choices js-choices" value=""><label for="radio"></label><br>
+        <input type="radio" name="choice4" class="choices js-choices" value=""><label for="radio"></label><br>
 
-          <legend class="question js-question"></legend>
-
-          <input type="radio" name="choices" class="choices js-choices" value="answer"><label for="radio">1</label><br>
-          <input type="radio" name="choices" class="choices js-choices" value="answer"><label for="radio">2</label><br>
-          <input type="radio" name="choices" class="choices js-choices" value="answer"><label for="radio">3</label><br>
-          <input type="radio" name="choices" class="choices js-choices" value="answer"><label for="radio">4</label><br>
-          <input type="radio" name="choices" class="choices js-choices" value="answer"><label for="radio">5</label><br>
-
-          <input type="submit" class="submit js-submit" value="Submit">
-
-        </fieldset>
-
+       <!-- SUBMIT BUTTON -->
+        <input type="submit" class="submit js-submit" value="Submit">
       </form>
 
-      <section class="correct-ans js-correct-ans">
-        <p><span class="asterick">*</span>This is where the correct answer to all of those important, stirring questions based on the 80's are held. Let your mind wander to the days of before, revel in the nostalgia of pop culturally the best decade ever. Enjoy!</p>
-      </section>
+      <article class="correct-ans js-correct-ans">
+        <p><span class="asterick">*</span>This is where the correct answer to all of those important, stirring questions based on the 80's are held. Let your mind wander to the days of before, revel in the nostalgia of the best pop cultured decade ever. Enjoy!</p>
+      </article>
 
-    </div>
-    <!-- END CONTENT DIV -->
+    </div><!-- END CONTENT -->
 
   </section>
 

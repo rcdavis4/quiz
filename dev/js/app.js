@@ -53,29 +53,25 @@ $(document).ready(function() {
     $('.js-question').html(Quiz[questionIndex].question);
   }
 
-//  function addChoices() {
 
+
+
+
+
+    var labelText = $('.js-choices').siblings("label").html();
+    var label = $('.js-choices').siblings("label");
     var choices = Quiz[questionIndex].choices;
-    var labels = $('label').each('label');
-    console.log(labels);
+    var inputName = $('.js-choices').attr("name").each();
+    var radios = $('.js-choices');
 
 
-//    for (var index = 0; index < labels.length; index++) {
-//      var labelContent = [labels];
-//    }
-//
-//    for (content in choices) {
-//      label.each().elements.html(choices[content]);
-//    }
-//  }
 
-// <label for="radio">choices</label>
+
 
   /*--- FUNCTION CALLS ---*/
   addQuestion();
 //  addChoices();
 
-//  var label = $('label');
 
 
 
@@ -86,9 +82,16 @@ $(document).ready(function() {
     // compare answer with selected choice
     // $('input:selected').siblings('label')
     // display message
+    // .on("click(event)", "#selector", funcion() {...})
+
 //  });
 
 
+//    for (var index = 0; index < choices.length; index++) {
+//      $('label').each(function() {
+//        $('label').html(choices[index]);
+//      });
+//    }
 
 
 
