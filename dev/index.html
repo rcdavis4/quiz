@@ -9,7 +9,6 @@
   <link rel="shortcut icon" type="image/x-icon"  href="favicon.ico">
 
   <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/grid.css">
   <link rel="stylesheet" href="css/main.css">
   <link href='http://fonts.googleapis.com/css?family=Asap:400,700' rel='stylesheet' type='text/css'>
   <script src="js/modernizr.js"></script>
@@ -28,25 +27,26 @@
         <legend class="question js-question"></legend>
 
         <!-- RADIO BUTTONS -->
-        <input type="radio" name="choice0" class="choices js-choices" value=""><label for="radio"></label><br>
-        <input type="radio" name="choice1" class="choices js-choices" value=""><label for="radio"></label><br>
-        <input type="radio" name="choice2" class="choices js-choices" value=""><label for="radio"></label><br>
-        <input type="radio" name="choice3" class="choices js-choices" value=""><label for="radio"></label><br>
-        <input type="radio" name="choice4" class="choices js-choices" value=""><label for="radio"></label><br>
+        <input type="radio" name="choice" class="choices js-choices" value=""><label for="choice0"></label><br>
+        <input type="radio" name="choice" class="choices js-choices" value=""><label for="choice1"></label><br>
+        <input type="radio" name="choice" class="choices js-choices" value=""><label for="choice2"></label><br>
+        <input type="radio" name="choice" class="choices js-choices" value=""><label for="choice3"></label><br>
+        <input type="radio" name="choice" class="choices js-choices" value=""><label for="choice4"></label><br>
 
        <!-- SUBMIT BUTTON -->
         <input type="submit" class="submit js-submit" value="Submit">
       </form>
 
-      <article class="correct-ans js-correct-ans">
-        <p><span class="asterick">*</span>This is where the correct answer to all of those important, stirring questions based on the 80's are held. Let your mind wander to the days of before, revel in the nostalgia of the best pop cultured decade ever. Enjoy!</p>
+      <article class="correct-ans js-correct-ans hidden">
+        <span class="asterick">*</span>
+        <p></p>
       </article>
 
     </div><!-- END CONTENT -->
 
   </section>
 
-
+  <!-- GAME OVER CONTAINER -->
   <section class="game-over-container">
     <div class="content">
 
