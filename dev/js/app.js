@@ -45,6 +45,7 @@ $(document).ready(function() {
   var correctMsg = "Correct!";
   var wrongMsg = "Sorry, that is just wrong!";
   var endMsg = "You answered " + correctCount + " out of " + Quiz.length + " question correctly!";
+  var nextMsg = "Get ready for next question."
   var correctCount = 0;
 
   /*--- SELECTORS ---*/
@@ -92,7 +93,7 @@ $(document).ready(function() {
     setInterval(function () {
       input.removeClass('hidden');
       questionDisplay.html(questions).removeClass('display-msg');
-    }, 2000);
+    }, 1000);
   }
 
   /* hides form and displays 'wrong' message*/
@@ -104,9 +105,9 @@ $(document).ready(function() {
 
     // display and remove fun fact about correct answer
     msgBox.removeClass('hidden').html(fact);
-    setInterval(function () {
-      msgBox.addClass('hidden');
-    }, 2000);
+//    setInterval(function () {
+//      msgBox.addClass('hidden');
+//    }, 2000);
   }
 
   /* delays removal of 'wrong' message */
@@ -115,7 +116,7 @@ $(document).ready(function() {
     setInterval(function () {
       input.removeClass('hidden');
       questionDisplay.html(questions).removeClass('display-msg');
-    }, 2000);
+    }, 3000);
   }
 
   /* compares the selected choice with the answer */
@@ -126,17 +127,16 @@ $(document).ready(function() {
     // compares the selected choice with the correct answer
     if (selectedChoice === answer) {
       displayCorrectMsg();
-      removeCorrectMsg();
 
       correctCount++;
     }
     else {
       displayWrongMsg();
-      removeWrongMsg();
     }
 
     questionSetIndex++; // should this be elsewhere
   }
+
 
 
 
