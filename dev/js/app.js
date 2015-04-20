@@ -52,13 +52,13 @@ $(document).ready(function() {
   /*--- SELECTORS ---*/
   var label = $('label');
   var input = $('input, label');
-  var choices = Quiz[questionSetIndex].choices;
+  var choices = function() { return Quiz[questionSetIndex].choices; };
   var radios = $('input[type="radio"]');
   var questionDisplay = $('.js-question')
-  var questions = Quiz[questionSetIndex].question;
+  var questions = function() { return Quiz[questionSetIndex].question; };
   var submit = $('.js-submit');
-  var answer = Quiz[questionSetIndex].answer;
-  var fact = Quiz[questionSetIndex].fact;
+  var answer = function() { return Quiz[questionSetIndex].answer; };
+  var fact = function() { return Quiz[questionSetIndex].fact; };
   var msgBox = $('.js-correct-ans');
 
 
@@ -70,14 +70,13 @@ $(document).ready(function() {
 
   /* load choices and input values */
   function addChoices() {
-    for (var index in choices) {
-      label[index].innerHTML = choices[index]; //
-      radios[index].value = choices[index];
-    }
+    input.removeClass('hidden');
 
-    /*for (var index = 0; index < choices.length; index++) {
-      $($('label')[index]).html(choices[index]); // wrap label selector with jquery to grab object instead of literal element
-    }*/
+    var c = choices();
+    for (var index in c) {
+      label[index].innerHTML = c[index];
+      radios[index].value = c[index];
+    }
   }
 
   /* hides form and displays 'correct' message*/
@@ -109,7 +108,7 @@ $(document).ready(function() {
     var correct;
 
     // compares the selected choice with the correct answer
-    if (selectedChoice === answer) {
+    if (selectedChoice === answer()) {
       correct = true;
       correctCount++;
       return correct;
@@ -126,6 +125,7 @@ $(document).ready(function() {
   addQuestion();
   addChoices();
 
+
   /*--- EVENTS ---*/
   /* prevents reloading when submiting input */
   $("form").submit(function(event) {
@@ -133,34 +133,33 @@ $(document).ready(function() {
   });
 
   submit.click(function() {
-    /* increment question index */
-    questionSetIndex++;
+
+    /* set time to equal msgDelay times 4 */
+    var time = msgDelay * 3;
+
     /* compares whether user answer is correct and sets to userChoice */
     var userChoice = compareAnswer();
+
     /* displays appropriate message (whether correct or incorrect) passing in users choice */
     displayMsg(userChoice);
 
-    /* delay of 'next question' message */
+    /* increment question index */
+    questionSetIndex++;
+
+    /* set time delay for correct answer */
     if (userChoice === true) {
-      setTimeout(function() {
-        nextMsg();
-      }, msgDelay);
-    }
-    else {
-      setTimeout(function() {
-        nextMsg();
-      }, msgDelay * 3);
+      time = msgDelay;
     }
 
+    /* delay 'next question' message */
+    setTimeout(function() {
+      nextMsg();
+    }, time);
+
+    /* delay call on adding questions and choices */
 
 
-  });
-
-
-// .on("click(event)", "#selector", funcion() {...})
-// fadeIn() / fadeOut();
-// delay()
-
+  }); // end click event
 
 
 }); // end document.ready
