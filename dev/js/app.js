@@ -2,7 +2,7 @@
 
 $(document).ready(function() {
 
-  /*--- QUIZ OBJECTS ---*/
+  /*--- QUIZ OBJECT ---*/
   var Quiz = [
     {
       question: "'That chick Julie, she's truly dazzling...Yep, but she's not one of ours.'",
@@ -43,10 +43,11 @@ $(document).ready(function() {
   /*--- GLOBALS ---*/
   var questionSetIndex = 0;
   var correctMsg = "Correct!";
-  var wrongMsg = "Sorry, that is just wrong!";
+  var wrongMsg = "X";
   var endMsg = "You answered " + correctCount + " out of " + Quiz.length + " question correctly!";
-  var nextMsg = "Get ready for next question."
+  var next = "next question..."
   var correctCount = 0;
+  var msgDelay = 1000; // 1 second
 
   /*--- SELECTORS ---*/
   var label = $('label');
@@ -64,7 +65,7 @@ $(document).ready(function() {
   /*--- FUNCTIONS ---*/
   /* load questions */
   function addQuestion() {
-    questionDisplay.html(questions);
+    questionDisplay.html(questions).removeClass('display-msg');
   }
 
   /* load choices and input values */
@@ -80,71 +81,50 @@ $(document).ready(function() {
   }
 
   /* hides form and displays 'correct' message*/
-  function displayCorrectMsg() {
+  function displayMsg(correct) {
     // hides form in order to display correct message
     input.addClass('hidden');
-    // adds message of 'correct' in place of question
-    questionDisplay.html(correctMsg).addClass('display-msg');
+
+    if (correct) {
+      // adds message of 'correct' in place of question
+      questionDisplay.html(correctMsg).addClass('display-msg');
+    }
+    else {
+      questionDisplay.html(wrongMsg).addClass('display-msg');
+      // display and remove fun fact about correct answer
+      questionDisplay.html(fact).addClass('display-msg');
+    }
   }
 
-  /* delays removal of 'correct' message */
-  function removeCorrectMsg() {
-    // removes 'correct' message after period of time
-    setInterval(function () {
-      input.removeClass('hidden');
-      questionDisplay.html(questions).removeClass('display-msg');
-    }, 1000);
-  }
-
-  /* hides form and displays 'wrong' message*/
-  function displayWrongMsg() {
-    // hides form in order to display wrong message
-    input.addClass('hidden');
-    // adds message of 'wrong' in place of question
-    questionDisplay.html(wrongMsg).addClass('display-msg');
-
-    // display and remove fun fact about correct answer
-    msgBox.removeClass('hidden').html(fact);
-//    setInterval(function () {
-//      msgBox.addClass('hidden');
-//    }, 2000);
-  }
-
-  /* delays removal of 'wrong' message */
-  function removeWrongMsg() {
-    // removes 'wrong' message after period of time
-    setInterval(function () {
-      input.removeClass('hidden');
-      questionDisplay.html(questions).removeClass('display-msg');
-    }, 3000);
+  /* display 'next question' message*/
+  function nextMsg() {
+    questionDisplay.html(next).addClass('display-msg');
   }
 
   /* compares the selected choice with the answer */
   function compareAnswer() {
     // access and gets value of selected choice
     var selectedChoice = $('input[name="choice"]:checked').val();
+    // define correct boolean
+    var correct;
 
     // compares the selected choice with the correct answer
     if (selectedChoice === answer) {
-      displayCorrectMsg();
-
+      correct = true;
       correctCount++;
+      return correct;
     }
     else {
-      displayWrongMsg();
+      correct = false;
+      return correct;
     }
-
-    questionSetIndex++; // should this be elsewhere
   }
 
 
-
-
   /*--- FUNCTION CALLS ---*/
+  /* initial load of questions and choices */
   addQuestion();
   addChoices();
-
-
 
   /*--- EVENTS ---*/
   /* prevents reloading when submiting input */
@@ -153,7 +133,26 @@ $(document).ready(function() {
   });
 
   submit.click(function() {
-    compareAnswer();
+    /* increment question index */
+    questionSetIndex++;
+    /* compares whether user answer is correct and sets to userChoice */
+    var userChoice = compareAnswer();
+    /* displays appropriate message (whether correct or incorrect) passing in users choice */
+    displayMsg(userChoice);
+
+    /* delay of 'next question' message */
+    if (userChoice === true) {
+      setTimeout(function() {
+        nextMsg();
+      }, msgDelay);
+    }
+    else {
+      setTimeout(function() {
+        nextMsg();
+      }, msgDelay * 3);
+    }
+
+
 
   });
 
@@ -161,40 +160,6 @@ $(document).ready(function() {
 // .on("click(event)", "#selector", funcion() {...})
 // fadeIn() / fadeOut();
 // delay()
-
-
-/*
-  // enter key press triggers button click
-  var enterKey = function (event) {
-    if (event.which == 13) {
-      $guessButton.click();
-    }
-  }
-
-  // keyup event calls enterKey function
-  $document.keyup(enterKey);
-
-*/
-
-  /*
-
-  // global
-  var correct = false
-  // within compareAnswer()
-  if selectedChoice === answer) {
-    correct = true;
-  }
-
-  // within submit.click event() {
-    // after compareAnswer() call
-    if (correct) {
-      call displayMsg(answer) // write function to accept param and create variable according to message
-      call removeMsg
-    }
-  }
-
-  */
-
 
 
 
