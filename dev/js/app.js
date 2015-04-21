@@ -43,10 +43,10 @@ $(document).ready(function() {
   /*--- GLOBALS ---*/
   var questionSetIndex = 0;
   var correctMsg = "Correct!";
+  var correctCount = 0;
   var wrongMsg = "X";
   var endMsg = "You answered " + correctCount + " out of " + Quiz.length + " question correctly!";
   var next = "next question..."
-  var correctCount = 0;
   var msgDelay = 1000; // 1 second
 
   /*--- SELECTORS ---*/
@@ -60,6 +60,9 @@ $(document).ready(function() {
   var answer = function() { return Quiz[questionSetIndex].answer; };
   var fact = function() { return Quiz[questionSetIndex].fact; };
   var msgBox = $('.js-correct-ans');
+  var questionForm = $('.js-qa-form')
+  var gameOver = $('.game-over-container');
+  var ending = $('.js-end-message > p');
 
 
   /*--- FUNCTIONS ---*/
@@ -79,6 +82,12 @@ $(document).ready(function() {
     }
   }
 
+  /* display movie fact if wrong answer */
+  function displayMovieFact() {
+    // display and remove fun fact about correct answer
+    questionDisplay.html(fact).addClass('display-msg');
+  }
+
   /* hides form and displays 'correct' message*/
   function displayMsg(correct) {
     // hides form in order to display correct message
@@ -89,9 +98,10 @@ $(document).ready(function() {
       questionDisplay.html(correctMsg).addClass('display-msg');
     }
     else {
+      // add wrong message
       questionDisplay.html(wrongMsg).addClass('display-msg');
       // display and remove fun fact about correct answer
-      questionDisplay.html(fact).addClass('display-msg');
+      displayMovieFact();
     }
   }
 
@@ -110,7 +120,6 @@ $(document).ready(function() {
     // compares the selected choice with the correct answer
     if (selectedChoice === answer()) {
       correct = true;
-      correctCount++;
       return correct;
     }
     else {
@@ -135,7 +144,7 @@ $(document).ready(function() {
   submit.click(function() {
 
     /* set time to equal msgDelay times 4 */
-    var time = msgDelay * 3;
+    var time = msgDelay * 2;
 
     /* compares whether user answer is correct and sets to userChoice */
     var userChoice = compareAnswer();
@@ -149,14 +158,30 @@ $(document).ready(function() {
     /* set time delay for correct answer */
     if (userChoice === true) {
       time = msgDelay;
+      correctCount++;
     }
 
-    /* delay 'next question' message */
-    setTimeout(function() {
-      nextMsg();
-    }, time);
+    /* only display the amount of questions/choices in the object array */
+    if (questionSetIndex < 5) {
+      /* delay 'next question' message */
+      setTimeout(function() {
+        nextMsg();
+      }, time);
 
-    /* delay call on adding questions and choices */
+      /* delay call on adding questions and choices */
+      setTimeout(function() {
+        addQuestion();
+        addChoices();
+      }, msgDelay * 3);
+    }
+    else {
+      setTimeout(function() {
+        questionForm.addClass('hidden');
+        gameOver.removeClass('hidden');
+        ending.html("You answered " + correctCount + " out of " + Quiz.length + " question correctly!");
+      }, msgDelay * 2);
+    }
+
 
 
   }); // end click event
