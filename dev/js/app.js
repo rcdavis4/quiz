@@ -38,31 +38,35 @@ $(document).ready(function() {
       answer: "Rad",
       fact: "something about Rad"
     }
-  ]
+  ];
+
 
   /*--- GLOBALS ---*/
+
   var questionSetIndex;
   var correctCount;
   var correctMsg = "Correct!";
   var wrongMsg = "X";
   var endMsg = "You answered " + correctCount + " out of " + Quiz.length + " question correctly!";
-  var next = "next question..."
+  var next = "next question...";
   var msgDelay = 1000; // 1 second
 
+
   /*--- SELECTORS ---*/
+
   var $label = $('label');
   var $input = $('input, label');
   var $choices = function() { return Quiz[questionSetIndex].choices; };
   var $radios = $('input[type="radio"]');
-  var $questionDisplay = $('.js-question')
+  var $questionDisplay = $('.js-question');
   var $questions = function() { return Quiz[questionSetIndex].question; };
   var $submit = $('.js-submit');
   var $answer = function() { return Quiz[questionSetIndex].answer; };
   var $fact = function() { return Quiz[questionSetIndex].fact; };
-  var $questionForm = $('.js-qa-form')
+  var $questionForm = $('.js-qa-form');
   var $gameOver = $('.game-over-container');
   var $ending = $('.js-end-message > p');
-  var $again = $('.js-play-again > button')
+  var $again = $('.js-play-again > button');
 
 
   /*--- FUNCTIONS ---*/
@@ -96,7 +100,8 @@ $(document).ready(function() {
     // disable property of radio buttons to not be checked
     $radios.prop('checked', false);
 
-    var c = $choices();
+    /* iterates through choices object and populates choices */
+    var c = $choices(); // calls choices function to store in variable
     for (var index in c) {
       $label[index].innerHTML = c[index];
       $radios[index].value = c[index];
@@ -151,11 +156,13 @@ $(document).ready(function() {
 
 
   /*--- FUNCTION CALLS ---*/
+
   /* initial load of questions and choices */
   quizSetup();
 
 
   /*--- EVENTS ---*/
+
   /* prevents reloading when submiting input */
   $("form").submit(function(event) {
     event.preventDefault();
@@ -194,6 +201,7 @@ $(document).ready(function() {
       }, time);
     }
     else {
+      /* displays end of game elements */
       setTimeout(function() {
         $questionForm.addClass('hidden');
         $gameOver.removeClass('hidden');
@@ -201,11 +209,11 @@ $(document).ready(function() {
       }, msgDelay * 2);
     }
 
-
-
   }); // end submit click event
 
+  /* clicking again? button */
   $again.click(function() {
+    /* restarts quiz */
     quizSetup();
   }); // end again? click event
 
@@ -213,8 +221,5 @@ $(document).ready(function() {
   // endMsg variable ??
   // display wrongMsg 'X' ??
   // display: hidden not working ??
-
-
-
 
 }); // end document.ready
