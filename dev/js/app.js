@@ -41,65 +41,86 @@ $(document).ready(function() {
   ]
 
   /*--- GLOBALS ---*/
-  var questionSetIndex = 0;
+  var questionSetIndex;
+  var correctCount;
   var correctMsg = "Correct!";
-  var correctCount = 0;
   var wrongMsg = "X";
   var endMsg = "You answered " + correctCount + " out of " + Quiz.length + " question correctly!";
   var next = "next question..."
   var msgDelay = 1000; // 1 second
 
   /*--- SELECTORS ---*/
-  var label = $('label');
-  var input = $('input, label');
-  var choices = function() { return Quiz[questionSetIndex].choices; };
-  var radios = $('input[type="radio"]');
-  var questionDisplay = $('.js-question')
-  var questions = function() { return Quiz[questionSetIndex].question; };
-  var submit = $('.js-submit');
-  var answer = function() { return Quiz[questionSetIndex].answer; };
-  var fact = function() { return Quiz[questionSetIndex].fact; };
-  var msgBox = $('.js-correct-ans');
-  var questionForm = $('.js-qa-form')
-  var gameOver = $('.game-over-container');
-  var ending = $('.js-end-message > p');
+  var $label = $('label');
+  var $input = $('input, label');
+  var $choices = function() { return Quiz[questionSetIndex].choices; };
+  var $radios = $('input[type="radio"]');
+  var $questionDisplay = $('.js-question')
+  var $questions = function() { return Quiz[questionSetIndex].question; };
+  var $submit = $('.js-submit');
+  var $answer = function() { return Quiz[questionSetIndex].answer; };
+  var $fact = function() { return Quiz[questionSetIndex].fact; };
+  var $questionForm = $('.js-qa-form')
+  var $gameOver = $('.game-over-container');
+  var $ending = $('.js-end-message > p');
+  var $again = $('.js-play-again > button')
 
 
   /*--- FUNCTIONS ---*/
+
+  /* initial load of questions, choices and hidden elements */
+  function quizSetup() {
+    /* set global counts to 0 */
+    questionSetIndex = 0;
+    correctCount = 0;
+
+    /* unhide q&a form */
+    $questionForm.removeClass('hidden');
+    /* hide end of game elements */
+    $gameOver.addClass('hidden');
+
+    /* add initial q&a to screen */
+    addQuestion();
+    addChoices();
+  }
+
   /* load questions */
   function addQuestion() {
-    questionDisplay.html(questions).removeClass('display-msg');
+    $questionDisplay.html($questions).removeClass('display-msg');
   }
 
   /* load choices and input values */
   function addChoices() {
-    input.removeClass('hidden');
+    // show container for inputs
+    $input.removeClass('hidden');
 
-    var c = choices();
+    // disable property of radio buttons to not be checked
+    $radios.prop('checked', false);
+
+    var c = $choices();
     for (var index in c) {
-      label[index].innerHTML = c[index];
-      radios[index].value = c[index];
+      $label[index].innerHTML = c[index];
+      $radios[index].value = c[index];
     }
   }
 
   /* display movie fact if wrong answer */
   function displayMovieFact() {
     // display and remove fun fact about correct answer
-    questionDisplay.html(fact).addClass('display-msg');
+    $questionDisplay.html($fact).addClass('display-msg');
   }
 
   /* hides form and displays 'correct' message*/
   function displayMsg(correct) {
     // hides form in order to display correct message
-    input.addClass('hidden');
+    $input.addClass('hidden');
 
     if (correct) {
       // adds message of 'correct' in place of question
-      questionDisplay.html(correctMsg).addClass('display-msg');
+      $questionDisplay.html(correctMsg).addClass('display-msg');
     }
     else {
       // add wrong message
-      questionDisplay.html(wrongMsg).addClass('display-msg');
+      $questionDisplay.html(wrongMsg).addClass('display-msg');
       // display and remove fun fact about correct answer
       displayMovieFact();
     }
@@ -107,7 +128,7 @@ $(document).ready(function() {
 
   /* display 'next question' message*/
   function nextMsg() {
-    questionDisplay.html(next).addClass('display-msg');
+    $questionDisplay.html(next).addClass('display-msg');
   }
 
   /* compares the selected choice with the answer */
@@ -118,7 +139,7 @@ $(document).ready(function() {
     var correct;
 
     // compares the selected choice with the correct answer
-    if (selectedChoice === answer()) {
+    if (selectedChoice === $answer()) {
       correct = true;
       return correct;
     }
@@ -131,8 +152,7 @@ $(document).ready(function() {
 
   /*--- FUNCTION CALLS ---*/
   /* initial load of questions and choices */
-  addQuestion();
-  addChoices();
+  quizSetup();
 
 
   /*--- EVENTS ---*/
@@ -141,10 +161,10 @@ $(document).ready(function() {
     event.preventDefault();
   });
 
-  submit.click(function() {
+  $submit.click(function() {
 
     /* set time to equal msgDelay times 4 */
-    var time = msgDelay * 2;
+    var time = msgDelay * 4;
 
     /* compares whether user answer is correct and sets to userChoice */
     var userChoice = compareAnswer();
@@ -155,9 +175,8 @@ $(document).ready(function() {
     /* increment question index */
     questionSetIndex++;
 
-    /* set time delay for correct answer */
+    /* increment counter for correct answers */
     if (userChoice === true) {
-      time = msgDelay;
       correctCount++;
     }
 
@@ -166,29 +185,36 @@ $(document).ready(function() {
       /* delay 'next question' message */
       setTimeout(function() {
         nextMsg();
-      }, time);
+      }, msgDelay);
 
       /* delay call on adding questions and choices */
       setTimeout(function() {
         addQuestion();
         addChoices();
-      }, msgDelay * 3);
+      }, time);
     }
     else {
       setTimeout(function() {
-        questionForm.addClass('hidden');
-        gameOver.removeClass('hidden');
-        ending.html("You answered " + correctCount + " out of " + Quiz.length + " question correctly!");
+        $questionForm.addClass('hidden');
+        $gameOver.removeClass('hidden');
+        $ending.html("You answered " + correctCount + " out of " + Quiz.length + " question correctly!");
       }, msgDelay * 2);
     }
 
 
 
-  }); // end click event
+  }); // end submit click event
 
-  //endMsg variable
-  //hide auto select/focus
-  //display wrongMsg
+  $again.click(function() {
+    quizSetup();
+  }); // end again? click event
+
+
+  // endMsg variable ??
+  // display wrongMsg 'X' ??
+  // display: hidden not working ??
+
+
 
 
 }); // end document.ready
