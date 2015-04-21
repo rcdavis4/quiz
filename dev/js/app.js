@@ -186,5 +186,9 @@ $(document).ready(function() {
 
   }); // end click event
 
+  //endMsg variable
+  //hide auto select/focus
+  //display wrongMsg
+
 
 }); // end document.ready
