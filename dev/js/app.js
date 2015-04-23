@@ -8,35 +8,30 @@ $(document).ready(function() {
       question: "'That chick Julie, she's truly dazzling...Yep, but she's not one of ours.'",
       choices: ["Valley Girl", "Weird Science", "Back To School", "Beetlejuice", "Big Trouble In Little China"],
       answer: "Valley Girl",
-      fact: "something about Valley Girl"
     },
 
     {
       question: "'This is pure snow. It's everywhere! Do you have any idea what the street value of this mountain is?'",
       choices: ["Better Off Dead", "2", "3", "4", "5"],
       answer: "Better Off Dead",
-      fact: "something about Better Off Dead"
     },
 
     {
       question: "'I got a question. If you guys know so much about women, how come you're here at like the Gas 'n' Sip on a Saturday night completely alone drinking beers with no women anywhere?'...'By choice!'",
       choices: ["Say Anything", "Fast Times At Ridgemont High", "Revenge Of The Nerds", "4", "5"],
       answer: "Say Anything",
-      fact: "something about Say Anything"
     },
 
     {
       question: "'Sweep the leg.'",
       choices: ["Karate Kid", "2", "3", "4", "5"],
       answer: "Karate Kid",
-      fact: "something about Karate Kid"
     },
 
     {
       question: "'What I wouldn't give to go ass-sliding with you right now.'",
       choices: ["Rad", "2", "3", "4", "5"],
       answer: "Rad",
-      fact: "something about Rad"
     }
   ];
 
@@ -62,7 +57,6 @@ $(document).ready(function() {
   var $questions = function() { return Quiz[questionSetIndex].question; };
   var $submit = $('.js-submit');
   var $answer = function() { return Quiz[questionSetIndex].answer; };
-  var $fact = function() { return Quiz[questionSetIndex].fact; };
   var $questionForm = $('.js-qa-form');
   var $gameOver = $('.game-over-container');
   var $ending = $('.js-end-message > p');
@@ -77,6 +71,8 @@ $(document).ready(function() {
     questionSetIndex = 0;
     correctCount = 0;
 
+    /* hide game over form */
+    $gameOver.css('display', 'none');
     /* unhide q&a form */
     $questionForm.removeClass('hidden');
 
@@ -106,12 +102,6 @@ $(document).ready(function() {
     }
   }
 
-  /* display movie fact if wrong answer */
-  function displayMovieFact() {
-    // display and remove fun fact about correct answer
-    $questionDisplay.html($fact).addClass('display-msg');
-  }
-
   /* hides form and displays 'correct' message*/
   function displayMsg(correct) {
     // hides form in order to display correct message
@@ -127,7 +117,6 @@ $(document).ready(function() {
       // delay the display of, and remove fun fact about correct answer
       setTimeout(function() {
         $questionDisplay.removeClass('lg-x');
-//        displayMovieFact();
       }, msgDelay);
     }
   }
