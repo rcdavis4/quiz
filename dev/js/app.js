@@ -47,7 +47,7 @@ $(document).ready(function() {
   var correctCount;
   var correctMsg = "Correct!";
   var wrongMsg = "X";
-  var endMsg = "You answered " + correctCount + " out of " + Quiz.length + " question correctly!";
+  var endMsg = function() { return "You answered " + correctCount + " out of " + Quiz.length + " question correctly!"; };
   var next = "next question...";
   var msgDelay = 1000; // 1 second
 
@@ -79,8 +79,6 @@ $(document).ready(function() {
 
     /* unhide q&a form */
     $questionForm.removeClass('hidden');
-    /* hide end of game elements */
-    $gameOver.addClass('hidden');
 
     /* add initial q&a to screen */
     addQuestion();
@@ -125,9 +123,12 @@ $(document).ready(function() {
     }
     else {
       // add wrong message
-      $questionDisplay.html(wrongMsg).addClass('display-msg');
-      // display and remove fun fact about correct answer
-      displayMovieFact();
+      $questionDisplay.html(wrongMsg).addClass('display-msg lg-x');
+      // delay the display of, and remove fun fact about correct answer
+      setTimeout(function() {
+        $questionDisplay.removeClass('lg-x');
+//        displayMovieFact();
+      }, msgDelay);
     }
   }
 
@@ -198,15 +199,16 @@ $(document).ready(function() {
       setTimeout(function() {
         addQuestion();
         addChoices();
-      }, time);
+      }, msgDelay * 2);
     }
+    /* end of questions */
     else {
       /* displays end of game elements */
       setTimeout(function() {
         $questionForm.addClass('hidden');
-        $gameOver.removeClass('hidden');
-        $ending.html("You answered " + correctCount + " out of " + Quiz.length + " question correctly!");
-      }, msgDelay * 2);
+        $gameOver.css('display', 'initial');
+        $ending.html(endMsg());
+      }, msgDelay * 3);
     }
 
   }); // end submit click event
@@ -217,9 +219,5 @@ $(document).ready(function() {
     quizSetup();
   }); // end again? click event
 
-
-  // endMsg variable ??
-  // display wrongMsg 'X' ??
-  // display: hidden not working ??
 
 }); // end document.ready

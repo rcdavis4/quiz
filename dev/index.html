@@ -25,14 +25,19 @@
         <legend class="question js-question"></legend>
 
         <!-- RADIO BUTTONS -->
-        <input type="radio" name="choice" class="choices js-choices" value=""><label for="choice0"></label><br>
-        <input type="radio" name="choice" class="choices js-choices" value=""><label for="choice1"></label><br>
-        <input type="radio" name="choice" class="choices js-choices" value=""><label for="choice2"></label><br>
-        <input type="radio" name="choice" class="choices js-choices" value=""><label for="choice3"></label><br>
-        <input type="radio" name="choice" class="choices js-choices" value=""><label for="choice4"></label><br>
+        <div class="radios">
+          <input type="radio" name="choice" class="choices js-choices" value=""><label for="choice0"></label><br>
+          <input type="radio" name="choice" class="choices js-choices" value=""><label for="choice1"></label><br>
+          <input type="radio" name="choice" class="choices js-choices" value=""><label for="choice2"></label><br>
+          <input type="radio" name="choice" class="choices js-choices" value=""><label for="choice3"></label><br>
+          <input type="radio" name="choice" class="choices js-choices" value=""><label for="choice4"></label><br>
+        </div>
 
-       <!-- SUBMIT BUTTON -->
-        <input type="submit" class="submit js-submit" value="Submit">
+        <!-- SUBMIT BUTTON -->
+        <div class="submit-btn">
+          <input type="submit" class="submit js-submit" value="Submit">
+        </div>
+
       </form>
 
     </div><!-- END CONTENT -->
@@ -45,9 +50,9 @@
 
       <h1 class="game-over js-game-over">Great Job!</h1>
 
-      <section class="end-message js-end-message">
+      <article class="end-message js-end-message">
         <p></p>
-      </section>
+      </article>
 
       <div class="play-again js-play-again">
         <button type="button" class="lg-btn js-lg-btn">Again?</button>
