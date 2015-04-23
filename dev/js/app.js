@@ -6,31 +6,31 @@ $(document).ready(function() {
   var Quiz = [
     {
       question: "'That chick Julie, she's truly dazzling...Yep, but she's not one of ours.'",
-      choices: ["Valley Girl", "Weird Science", "Back To School", "Beetlejuice", "Big Trouble In Little China"],
+      choices: ["Beetlejuice", "The Princess Bride", "Back To School", "Valley Girl", "Big Trouble In Little China"],
       answer: "Valley Girl",
     },
 
     {
       question: "'This is pure snow. It's everywhere! Do you have any idea what the street value of this mountain is?'",
-      choices: ["Better Off Dead", "2", "3", "4", "5"],
+      choices: ["Back to the Future", "Vacation", "Weird Science", "Better Off Dead", "Bill and Ted's Excellent Adventure"],
       answer: "Better Off Dead",
     },
 
     {
       question: "'I got a question. If you guys know so much about women, how come you're here at like the Gas 'n' Sip on a Saturday night completely alone drinking beers with no women anywhere?'...'By choice!'",
-      choices: ["Say Anything", "Fast Times At Ridgemont High", "Revenge Of The Nerds", "4", "5"],
+      choices: ["Say Anything", "Fast Times At Ridgemont High", "Revenge Of The Nerds", "Ferris Bueller's Day Off", "Sixteen Candles"],
       answer: "Say Anything",
     },
 
     {
       question: "'Sweep the leg.'",
-      choices: ["Karate Kid", "2", "3", "4", "5"],
+      choices: ["Empire Stricks Back", "The Lost Boys", "Big", "Beverly Hills Cop", "Karate Kid"],
       answer: "Karate Kid",
     },
 
     {
       question: "'What I wouldn't give to go ass-sliding with you right now.'",
-      choices: ["Rad", "2", "3", "4", "5"],
+      choices: ["The Breakfast Club", "Top Gun", "Pretty in Pink", "Rad", "The Goonies"],
       answer: "Rad",
     }
   ];

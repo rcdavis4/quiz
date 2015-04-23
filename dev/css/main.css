@@ -189,6 +189,8 @@ input:focus {
 .lg-btn:hover {
   background-color: rgba(0, 0, 0, 0.84);
   color: #fff;
+  border: none;
+  padding: 14px 44px;
 }
 
 .lg-btn:focus {
