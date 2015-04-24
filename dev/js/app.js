@@ -109,15 +109,11 @@ $(document).ready(function() {
 
     if (correct) {
       // adds message of 'correct' in place of question
-      $questionDisplay.html(correctMsg).addClass('display-msg');
+      $questionDisplay.html(correctMsg).addClass('display-msg')
     }
     else {
       // add wrong message
       $questionDisplay.html(wrongMsg).addClass('display-msg lg-x');
-      // delay the display of, and remove fun fact about correct answer
-      setTimeout(function() {
-        $questionDisplay.removeClass('lg-x');
-      }, msgDelay);
     }
   }
 
@@ -197,7 +193,7 @@ $(document).ready(function() {
         $questionForm.addClass('hidden');
         $gameOver.css('display', 'initial');
         $ending.html(endMsg());
-      }, msgDelay * 3);
+      }, msgDelay);
     }
 
   }); // end submit click event

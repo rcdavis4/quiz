@@ -11,7 +11,7 @@ html {
 body {
   width: 100vw;
   height: 100%;
-  background-color: #fff;
+  background-color: #ddd;
   font-family: 'Asap', sans-serif;
   font-size: 1em;
 }
@@ -38,6 +38,7 @@ body {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  flex-direction: column;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -51,12 +52,12 @@ body {
   width: 100%;
   margin-bottom: 3rem;
   text-align: center;
-  font-family: 'Asap',sans-serif;
+  font-family: 'Open-Sans',sans-serif;
   font-weight: 700;
   font-size: 4em;
   color: #fff;
   background-color: #607D8B;
-  padding: 2rem ;
+  padding: 1rem ;
 }
 
 .question {
@@ -75,27 +76,27 @@ body {
   margin-top: 2em;
 }
 
-.lg-x {
-  font-size: 6rem;
-}
-
-
 /*
   ========================================
   INPUT SECTION (RADIO & SUBMIT BUTTON)
   ========================================
 */
 
-.radios {
-  padding-left: 38%;
+form {
+  background-color: #fff;
+  text-align: center;
+  padding-top: 4rem;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  margin-bottom: 2rem;
 }
 
-.submit-btn {
-  text-align: center;
+.radios {
+  display: inline-block;
+  text-align: left;
+  padding-left: 1em;
 }
 
 input {
-  margin-right: 1.3em;
   margin-bottom: 1.8em;
   cursor: pointer;
 }
@@ -105,6 +106,7 @@ label {
   font-weight: 700;
   font-size: 1.2em;
   color: rgba(0, 0, 0, 0.64);
+  padding-left: 1em;
 }
 
 .submit {
@@ -119,6 +121,12 @@ label {
   line-height: 3.75rem;
   width: 200px;
   border: none;
+}
+
+.submit:hover {
+  background-color: aquamarine;
+  color: #D32F2F;
+
 }
 
 input:focus {
