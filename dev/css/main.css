@@ -124,9 +124,7 @@ label {
 }
 
 .submit:hover {
-  background-color: aquamarine;
-  color: #D32F2F;
-
+  background-color: #b30d0d;
 }
 
 input:focus {
