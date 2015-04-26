@@ -24,7 +24,7 @@ $(document).ready(function() {
 
     {
       question: "'Sweep the leg.'",
-      choices: ["Empire Stricks Back", "The Lost Boys", "Big", "Beverly Hills Cop", "Karate Kid"],
+      choices: ["Empire Strikes Back", "The Lost Boys", "Big", "Beverly Hills Cop", "Karate Kid"],
       answer: "Karate Kid",
     },
 
