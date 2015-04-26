@@ -34,14 +34,8 @@ body {
 */
 
 .qa-container {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
   -webkit-box-align: center;
   -webkit-align-items: center;
@@ -73,7 +67,7 @@ body {
 .display-msg {
   font-size: 4em;
   color: #D32F2F;
-  margin-top: 2em;
+  margin-top: 0.8em;
 }
 
 /*
@@ -138,13 +132,7 @@ input:focus {
 */
 
 .game-over-container {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
   -webkit-box-align: center;
   -webkit-align-items: center;
