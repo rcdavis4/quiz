@@ -3,10 +3,9 @@
 
 <head>
   <meta charset="utf-8">
-  <title></title>
+  <title>80's Movie Quiz</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<!--  <link rel="stylesheet" href="css/reset.css">-->
+  
   <link rel="stylesheet" href="css/materialize.css">
   <link rel="stylesheet" href="css/main.css">
 </head>
@@ -15,11 +14,14 @@
 
 
   <!-- Q&A CONTAINER -->
-  <section class="">
+  <section class="js-qa-form">
   
 		
 			<form method="post" class="qa-form js-qa-form white z-depth-2">
-				<legend class="question js-question"></legend>
+				
+				<div class="question-wrapper">
+					<legend class="question js-question"></legend>
+				</div>
 				
 				<div class="radios">
 					<p>
@@ -48,33 +50,31 @@
 					</p>	
 				</div>
 				
+				
 				<div class="submit-btn">
 					<button class="btn waves-effect waves-light submit js-submit blue-grey" type="submit" name="action">Submit</button>
 				</div>
   		
 		</form>					
 		
-  </section>
+	</section>
   
   
   
 
   <!-- GAME OVER CONTAINER -->
   <section class="game-over-container">
-    <div class="content">
+          
+		<h1 class="game-over js-game-over">Great Job!</h1>
 
-      <h1 class="game-over js-game-over">Great Job!</h1>
+		<article class="end-message js-end-message">
+			<p></p>
+		</article>
 
-      <article class="end-message js-end-message">
-        <p></p>
-      </article>
-
-      <div class="play-again js-play-again">
-        <button type="button" class="lg-btn js-lg-btn">Again?</button>
-      </div>
-
-    </div>
-    <!-- END CONTENT DIV -->
+		<div class="play-again js-play-again">
+			<button class="btn waves-effect waves-light js-lg-btn blue-grey" type="button" name="action">Again?</button>
+		</div>
+      
   </section>
 
 

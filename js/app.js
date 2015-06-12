@@ -17,7 +17,7 @@ $(document).ready(function() {
     },
 
     {
-      question: "'I got a question. If you guys know so much about women, how come you're here at like the Gas 'n' Sip on a Saturday night completely alone drinking beers with no women anywhere?'...'By choice!'",
+      question: "'If you guys know so much about women, how come you're here at like the Gas 'n' Sip on a Saturday night completely alone drinking beers with no women anywhere?'",
       choices: ["Say Anything", "Fast Times At Ridgemont High", "Revenge Of The Nerds", "Ferris Bueller's Day Off", "Sixteen Candles"],
       answer: "Say Anything",
     },
