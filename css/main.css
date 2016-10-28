@@ -9,7 +9,7 @@ html {
 }
 
 body {
-  background-color: #E53935;
+  background-color: #6035e5;
 	font-size: 1em;
 }
 
@@ -32,7 +32,6 @@ section {
 	max-width: 85%;
 	margin: 0 auto;
 	-webkit-transform: translateY(10%);
-	    -ms-transform: translateY(10%);
 	        transform: translateY(10%);
 	text-align: center;
 }
@@ -71,11 +70,9 @@ section {
 
 .game-over-container {
   display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
@@ -94,16 +91,13 @@ section {
 
 .end-message {
   display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
       -ms-flex-direction: row;
           flex-direction: row;
   -webkit-box-pack: center;
-  -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
@@ -121,11 +115,9 @@ section {
 
 .play-again {
   display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
@@ -147,7 +139,6 @@ section {
 		display: block;
 		min-width: 100%;
 		-webkit-transform: translateY(0);
-		    -ms-transform: translateY(0);
 		        transform: translateY(0);
 	}
 
